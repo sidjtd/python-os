@@ -1,3 +1,5 @@
+import os
+
 #1. Open the filenames.txt file with read-only access with the open() function
 file_object0 = open('filenames.txt', 'r')
 print(file_object0)
@@ -43,7 +45,9 @@ for each in file_secrets_check:
   file_test.append(each)
 
 print('confirm this works: ', file_test)
+
 #cat secrets.txt
+file_secrets_check.close()
 
 #10. Open your secrets.txt file in append mode and write some more super secret info
 file_secret_anew = open('secrets.txt', 'a')
@@ -51,17 +55,14 @@ file_secret_anew.write('\nok this is the last straw')
 
 print(file_secret_anew);
 
-# with open('secrets.txt', 'a') as test:
-#   test.write('omg will this work')
-
-# file_secrets2 = open(file_list[2], 'a')
-# file_secrets2.write('And btw.... this is more secret stuff')
-
 #11. Close the secrets.txt file again using the close() function
+file_secret_anew.close()
 
 #12. Rename the secrets.txt and make it a "hidden" file named .supersecret.txt using the os.rename() function
+os.rename('secrets.txt', '.supersecret.txt')
 
 #13. See if you can see the file in your file explorer
+
 
 #14. Create a list variable named file_names that contains a list of filenames
 
